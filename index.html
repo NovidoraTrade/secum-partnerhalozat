@@ -53,3 +53,4 @@ window.login = async function(){let email=document.getElementById('loginEmail').
 async function logout(){await db.auth.signOut()}
 async function applySession(session){let logged=!!session;document.getElementById('authScreen').style.display=logged?'none':'flex';document.getElementById('logoutBtn').style.display=logged?'block':'none';if(logged){await loadPartners();setTimeout(()=>map.invalidateSize(),100)}else{partners=[];render()}}
 db.auth.onAuthStateChange((event,session)=>{setTimeout(()=>applySession(session),0)});
+ </script>
